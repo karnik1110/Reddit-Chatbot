@@ -1,0 +1,57 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %}
+{% block content %} 
+
+<div class="row h-100 m-0 chat-container">
+    <div class="col-10">
+        <div class="p-40 h-100">
+            <div class="chat-main-area">
+                <div class="row">
+                    <div class="align-self-center">
+                        <img class="redit-icon" src="{{ url_for('static', filename='/images/logo.png') }}" alt="Reddit Assist" style="width: 100px;"/>
+                        <!-- <i class="fa fa-reddit-alien redit-icon" aria-hidden="true"></i> -->
+                    </div>
+                    <div><span class="chatbot-h1">Reddit Assist</span><br/><span class="active-user-name">{{ current_user.user_name }}</span></div>
+                </div>             
+            </div>
+            <div class="chat-display-area">
+                <div class="chat-messages-div pt-2 pb-2" style="background-color: #fff;">
+                    <ul>
+                        {% for chat in current_user.chats %}
+                        {% if chat.target_user_id == 0 %}
+                        <li class="sent">
+                            <span class="bg-primary">{{ chat.data }}</span>
+                        </li>
+                        {% else %}
+                        <li class="reply">
+                            <span class="bg-primary">{{ chat.data }}</span>
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>
+                <form action="/msg" method="POST">
+                <div class="row" style="background-color: #fff;margin-left: 1px; margin-right: 1px; margin-top: 2px;margin-bottom: 32px;">
+                    <!-- <div class="col-sm-1"><div class="circle" style="background-color: #2f8cf3;margin-left: 15px; margin-top: 15px;margin-bottom: 15px"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 24 24" style="fill:#FFFFFF;"><path fill-rule="evenodd" d="M 11 2 L 11 11 L 2 11 L 2 13 L 11 13 L 11 22 L 13 22 L 13 13 L 22 13 L 22 11 L 13 11 L 13 2 Z"></path></svg></div></div> -->
+                    <div class="col" style="padding: 15px;"><div class="input-area"><input type="text" class="form-control msg-input-field" placeholder="Enter you message here..." aria-label="msg" aria-describedby="basic-addon1" id="msg" name="msg"></div></div>  
+                    <div class="col-xs-1" style="background-color: #fff;"><button class="circle" style="border: none;background-color: #575f78;margin-right: 15px; margin-top: 15px;margin-bottom: 15px"><i class="fa fa-paper-plane" aria-hidden="true" style="color: #fff;" type="submit"></i></button></div>
+                </div>
+                </form>                
+            </div>
+        </div>
+    </div>
+    <div class="col" style="background-color: #575f78;">
+        <div style="text-align: center;margin-top: 40px;color: #fff;"><h1>Chats</h1><br/></div>
+        <div style="margin-top: 40px;"><span style="color:#f0d687">Recent Chats</span></div>
+        <div style="margin-top: 5px;background-color: #575f78;">
+            <ul class="list-group" style="background-color: #575f78;">
+                <li class="list-group-item" style="background-color: #575f78;color: #fff;">Coming Soon....!</li>
+            </ul>
+        </div>
+        <form action="/clearChats" method="POST">
+        <div style="text-align: left;"><button type="submit" style="width: 200px;background-color: #575f78;border: 2px solid #f0d687;color: #f0d687;margin-top: 40px;height: 40px;border-radius: 50px;text-align: center;"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="24" viewBox="0 0 40 24" style="fill:#FFFFFF;"><path fill-rule="evenodd" d="M 11 2 L 11 11 L 2 11 L 2 13 L 11 13 L 11 22 L 13 22 L 13 13 L 22 13 L 22 11 L 13 11 L 13 2 Z"></path></svg> Create New Chat</button></div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
+

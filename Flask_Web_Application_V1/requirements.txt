@@ -1,0 +1,12 @@
+pandas
+gdown
+torch
+sklearn
+numpy
+website
+flask
+flask_login
+transformers
+bs4
+sqlalchemy
+werkzeug

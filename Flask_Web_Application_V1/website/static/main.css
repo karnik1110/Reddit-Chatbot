@@ -1,0 +1,126 @@
+html,body { height: 100%; margin: 0; padding: 0}
+.main-content {
+    padding-top: 50px;
+}
+.fullscreen {
+    width: 100% !important;
+}
+
+.alert {
+    position: absolute;
+    margin-top: 58px;
+    z-index: 999;
+}
+.circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.chat-container {
+    background-color: #f4f8fb;
+}
+
+.circle i {
+    font-size: 20px;
+    color: #000;
+
+}
+
+.p-40 {
+    padding: 40px;
+}
+
+.chat-main-area {
+    background-color: #f8fcff; 
+    padding: 10px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border: solid #00000012 1px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.align-self-center {
+    align-self: center;
+}
+
+.redit-icon{
+    padding-left: 20px;
+    font-size: 2.5em;
+    float: left;
+    color: #d72323;
+}
+
+.chatbot-h1{
+    font-family: verdana;
+    font-size: 20px; 
+    padding-left: 20px;
+}
+
+.active-user-name{
+    font-family: verdana;
+    font-size: 15px; 
+    padding-left: 20px;
+    color: #f0d687;
+}
+
+.chat-display-area{
+    background-color: #f8fcff;
+    height: 80%;
+    border: solid #00000012 1px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.chat-messages-div {
+    height: 51vh;
+    /* height: 100%; */
+    padding-right: 30px;
+    border-bottom:solid #00000012 1px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    overflow: auto;
+}
+
+.chat-messages-div ul {
+    list-style-type: none;
+}
+
+.chat-messages-div li {
+    margin-top: 10px;
+}
+
+.chat-messages-div .sent {
+    margin-top: 10px;
+    text-align: right;
+}
+
+.chat-messages-div li > span{
+    display: inline-block;
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.input-area{
+    color: #00000072;
+    margin: 15px;
+}
+
+.msg-input-field{
+    border: none;
+    font-size: larger;
+}
+
+/* .input-field {
+    background-color: #fff;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+} */
+
+.input-area {
+    margin: 0 !important;
+}
